@@ -1,18 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import StarwarsService from '../../shared/api/service/StarwarsService'
 
 export const Uppgift3 = () => {
-	const character = undefined
-	const count = 1
-
+	//const character = undefined
+	const[character,setCharacter]=useState()
+	//const count = 1
+	const[count,setCount]=useState(1)
 	const getCharacterNameFromStarwarsAPI = async () => {
+		if (count>0){
 		const { data } = await StarwarsService.getStarwarsCharacter(count)
+			setCharacter(data)
 	}
+}
 
 	const buttons = () => {
 		return <div>
-			<button>Increment</button> <br />
-			<button>Decrement</button>
+			<button onClick= {()=>{setCount(count+1);getCharacterNameFromStarwarsAPI()}}>Increment</button> <br />
+			<button onClick= {()=>{setCount(count-1);getCharacterNameFromStarwarsAPI()}}>Decrement</button>
 		</div>
 	}
 

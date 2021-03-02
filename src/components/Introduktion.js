@@ -1,15 +1,15 @@
 import React from 'react'
 
-export const Introduktion = () => {
+export const Introduktion = (fname,lname,course) => {
 	return (
 		<div className="introduktion">
-			<h2>Förnamn: </h2>
-			<h2>Efternamn: </h2>
-			<h2>Kurs: </h2>
+			<h2>Förnamn:{fname} </h2>
+			<h2>Efternamn:{lname} </h2>
+			<h2>Kurs:{course} </h2>
 		</div>
 	)
 }
-
+export default Introduktion
 
 /*
 
